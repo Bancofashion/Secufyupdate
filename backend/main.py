@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from auth import router as auth_router
 from fastapi.middleware.cors import CORSMiddleware
 from users import router as users_router
@@ -57,4 +58,4 @@ app.include_router(pdf_export_router)
 # ✅ Start de server correct
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8080, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
