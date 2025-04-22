@@ -1,9 +1,9 @@
-export async function apiRequest(
+const apiRequest = async (
     endpoint: string,
     method: 'GET' | 'POST' | 'PUT' | 'DELETE' = 'GET',
     data: any = null,
     isFormData: boolean = false
-) {
+) => {
     console.log(`[API] ${method} ${endpoint} met data:`, data);
 
     let token: string | null = null;
@@ -43,4 +43,6 @@ export async function apiRequest(
         console.error('🚨 API request error:', error);
         throw error;
     }
-}
+};
+
+export default apiRequest; // ✅ Now works with `import apiRequest from '@/lib/api'`
