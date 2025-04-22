@@ -26,7 +26,8 @@ export async function apiRequest(
     };
 
     try {
-        const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8080";
+        const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://secufy-backend.onrender.com
+";
         console.log(`[API] ${method} ${API_URL}${endpoint} wordt verzonden...`);
 
         const response = await fetch(`${API_URL}${endpoint}`, options);
